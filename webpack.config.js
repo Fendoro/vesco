@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -17,5 +19,17 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  resolve: {
+    alias: {
+      jquery: "jquery/src/jquery"
+    }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    })
+  ]
 };
