@@ -2,6 +2,8 @@ import $ from "jquery";
 import { WOW } from "wowjs";
 import magnificPopup from "magnific-popup";
 import owlCarousel from "owl.carousel";
+import waypoints from "waypoints/lib/jquery.waypoints";
+import counterUp from "jquery.counterup";
 
 $(() => {
     new WOW().init();
@@ -34,5 +36,12 @@ $(() => {
         smartSpeed: 700,
         loop: true,
         autoplayHoverPause: true
+    });
+});
+
+$(() => {
+    $(".counter").counterUp({
+        delay: 10,
+        time: 2000
     });
 });
