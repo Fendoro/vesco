@@ -139,23 +139,10 @@
     }
 }
 
-@media (max-width:700px) {
-    /* about */
-    #about-content-box {
-        margin-top: 40px;
-    }
-    #about-bg-diagonal {
-        background-attachment: local;
-    }
-}
-
 @media (max-width:480px) {
     /* about */
     #about-content-box {
         margin-top: 40px;
-    }
-    #about-bg-diagonal {
-        background-attachment: local;
     }
 }
 
@@ -176,5 +163,11 @@
     }
     .testimonial blockquote::after {
         right: 7px;
+    }
+}
+
+@media (max-height:500px) {
+    .navbar-collapse.no-max-height {
+        max-height: 100vh;
     }
 }
