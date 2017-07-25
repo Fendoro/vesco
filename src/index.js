@@ -1,5 +1,5 @@
 import $ from "jquery";
-import bootstrap from "bootstrap";
+import bootstrap from "./bootstrap/bootstrap.min";
 import { WOW } from "wowjs";
 import magnificPopup from "magnific-popup";
 import owlCarousel from "owl.carousel";
@@ -30,7 +30,18 @@ $(() => {
         autoplay: true,
         smartSpeed: 700,
         loop: true,
-        autoplayHoverPause: true
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            480: {
+                items: 2
+            },
+            768: {
+                items: 3
+            }
+        }
     });
 });
 
@@ -60,7 +71,21 @@ $(() => {
         autoplay: true,
         smartSpeed: 700,
         loop: true,
-        autoplayHoverPause: true
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            480: {
+                items: 3
+            },
+            768: {
+                items: 5
+            },
+            992: {
+                items: 6
+            }
+        }
     });
 });
 
@@ -85,5 +110,14 @@ $(() => {
         $("html, body").animate({
             scrollTop: $(section).offset().top - 64
         }, 1250, "easeInOutExpo");
+    });
+});
+
+//close mobile menu on click
+$(() => {
+    $(".navbar-collapse ul li a").on("click touch", () => {
+        if ($(window).outerWidth() < 1200) {
+            $(".navbar-toggle").click();
+        }
     });
 });
